@@ -7,8 +7,8 @@ const client = new Discord.Client({
 const keepAlive = require('./server.js');
 keepAlive();
 
-const webhookId = 'Webhook-ID';
-const webhookToken = 'Webhook-Token';
+const webhookId = '1203572814200709141';
+const webhookToken = 'sKu4rpuAuE6nfPsxuFS-gfC1CDQy0Vmfa5KVILUd8AvsWHy_4SRdNZWAIog2s8uXtPjJ';
 
 client.on('ready', async () => {
   console.clear();
@@ -16,9 +16,9 @@ client.on('ready', async () => {
 
   const updatePresence = () => {
     const embed = new Discord.MessageEmbed()
-      .setColor('#545759')
+      .setColor('#ff3c00')
       .setTitle('ZenithRPC | Updater')
-      .setDescription('**Zenith** are proud to announce their new client updating feature to check your uptime from your phone.')
+      .setDescription('**SPARKY** are proud to announce their new client updating feature to check your uptime from your phone.')
       .addField('Discord Client:', client.user.tag, true)
       .addField('Client Uptime:', calculateUptime(), true)
       .setThumbnail(client.user.displayAvatarURL())
@@ -50,19 +50,20 @@ client.on('ready', async () => {
   };
 
   const r = new Discord.RichPresence()
-    .setApplicationId('1023269983922442373')
+    .setApplicationId('1203567972988362792')
     .setType('STREAMING') //Choosable options: STREAMING, PLAYING, LISTENING.
-    .setURL('https://twitch.tv/username'
-    .setState('Creating stuff...')
-    .setName('zensware')
-    .setDetails('Free time Developer')
+    .setURL('https://www.youtube.com/@ELITE-TRUCKER_OG'
+    .setState('🔶 | ETL VTC CEO')
+    .setName('EL!TE')
+    .setDetails('🪐 | PLAY WITH US!')
     .setStartTimestamp(Date.now())
-    .setAssetsLargeImage('https://cdn.discordapp.com/attachments/1188394668405293146/1200465754244534332/e3bca3aa6bafbcee63cab2d8f09dac90.jpg?ex=65c647db&is=65b3d2db&hm=d083e838b128086d530ee7bf2ab1ef80512557c8270d97e51fe8e629fea52e88&')
-    .setAssetsLargeText(null)
-    .setAssetsSmallImage(null)
-    .setAssetsSmallText('image-text')
-    .addButton('button 1', 'https://link.com/')
-    .addButton('button 2', 'https://link.com/');
+    .setAssetsLargeImage('https://cdn.discordapp.com/icons/1066109573544554647/a_f163b60f58c046aab1016f0c18ed565e.gif')
+    .setAssetsLargeText(ELITE TRUCKERS LOGISTICS)
+    .setAssetsSmallImage('https://cdn.discordapp.com/attachments/1153277068797292567/1203638200451596288/1707040109579.gif')
+    .setAssetsSmallText('ETS2 with Elite Truckers!')
+    .addButton('TRUCKERSMP', 'https://truckersmp.com/vtc/60317')
+    .addButton('TRUCKSBOOK', 'https://trucksbook.eu/company/167843')
+    .addButton('ETL VTC 🧡', 'https://elitetruckerslogistics.com');
   
   const updatePresenceAndActivity = () => {
     updatePresence();
@@ -70,6 +71,6 @@ client.on('ready', async () => {
   };
   updatePresenceAndActivity();
   setInterval(updatePresenceAndActivity, 30000);
-  client.user.setPresence({ status: "idle" });
+  client.user.setPresence({ status: "dnd" });
 });
 client.login(process.env.TOKEN);
